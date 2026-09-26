@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#0B1E3A" name="theme-color"/>
+<meta content="Conheça as boas práticas de segurança, OAuth, HTTPS e proteção de credenciais do Aviation Manager." name="description"/>
+<title>Segurança | Aviation Manager</title>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet"/>
+<link href="https://aviationmanager.app/seguranca.html" hreflang="pt-BR" rel="alternate"/><link href="https://aviationmanager.app/en/seguranca.html" hreflang="en" rel="alternate"/><link href="https://aviationmanager.app/seguranca.html" hreflang="x-default" rel="alternate"/></head>
+<body data-page="features">
+<div data-site-header=""></div>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="index.html">Início</a> / Segurança</div><div class="eyebrow">Segurança</div><h1>Seus dados. Sua operação. Com mais controle.</h1><p class="lead">Boas práticas de autenticação, HTTPS e proteção de credenciais fazem parte da estrutura de publicação da plataforma.</p></div></section>
+<section class="section"><div class="container"><div class="grid-3"><article class="card"><div class="icon">🔒</div><h3>HTTPS</h3><p>O ambiente de produção deve operar integralmente com conexão criptografada.</p></article><article class="card"><div class="icon">◈</div><h3>Credenciais no backend</h3><p>Tokens, Client Secrets e chaves de API não devem ser expostos ao navegador.</p></article><article class="card"><div class="icon">◎</div><h3>Controle de acesso</h3><p>Autenticação e permissões devem limitar o acesso às informações conforme o perfil do usuário.</p></article></div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><div><div class="eyebrow">OAuth</div><h2>Google Calendar e Gmail com permissões controladas.</h2></div><p>Use apenas os escopos necessários ao funcionamento do sistema e mantenha refresh tokens protegidos.</p></div><div class="feature-list"><div class="feature-line"><small>Calendar</small><h3>calendar.events</h3><p>Permissão específica para criação e atualização de eventos.</p></div><div class="feature-line"><small>Gmail</small><h3>gmail.send</h3><p>Permissão destinada ao envio, sem exigir acesso amplo à caixa de entrada.</p></div><div class="feature-line"><small>Identidade</small><h3>userinfo.email</h3><p>Usado para confirmar a conta associada à integração.</p></div><div class="feature-line"><small>Segredo</small><h3>Refresh Token</h3><p>Deve ficar armazenado de forma segura e nunca aparecer em código público.</p></div></div></div></section>
+</main>
+<div data-site-footer=""></div>
+<script src="assets/config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#0B1E3A" name="theme-color"/>
+<meta content="Google Calendar, Gmail e WhatsApp Cloud API integrados ao fluxo do Aviation Manager." name="description"/>
+<title>Integrações | Aviation Manager</title>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet"/>
+<link href="https://aviationmanager.app/integracoes.html" hreflang="pt-BR" rel="alternate"/><link href="https://aviationmanager.app/en/integracoes.html" hreflang="en" rel="alternate"/><link href="https://aviationmanager.app/integracoes.html" hreflang="x-default" rel="alternate"/></head>
+<body data-page="integrations">
+<div data-site-header=""></div>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="index.html">Início</a> / Integrações</div><div class="eyebrow">Conectividade</div><h1>Sua operação conectada às ferramentas do dia a dia.</h1><p class="lead">Calendar, e-mail e WhatsApp integrados ao fluxo de agendamento, sem duplicar trabalho.</p></div></section>
+<section class="section"><div class="container"><div class="grid-3">
+<article class="card"><div class="icon">31</div><h3>Google Calendar</h3><p>Criação e atualização de eventos com informações do voo e da aeronave selecionada.</p></article>
+<article class="card"><div class="icon">✉</div><h3>Gmail / E-mail</h3><p>Envio de comunicações ligadas ao agendamento com permissões OAuth específicas.</p></article>
+<article class="card"><div class="icon">◉</div><h3>WhatsApp Cloud API</h3><p>Mensagens automáticas oficiais da Meta para destinatários previamente cadastrados.</p></article>
+</div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><div><div class="eyebrow">WhatsApp</div><h2>Notificação sem comprometer o salvamento do voo.</h2></div><p>Se a API estiver indisponível, o voo continua salvo e a notificação pode ficar pendente para reenvio.</p></div><div class="table-wrap"><table class="table"><thead><tr><th>Evento</th><th>Ação</th><th>Status</th><th>Comportamento</th></tr></thead><tbody><tr><td>Novo voo</td><td>Enviar template</td><td>sent / pending / failed</td><td>Não bloqueia o agendamento</td></tr><tr><td>Alteração</td><td>Enviar dados atualizados</td><td>sent / pending / failed</td><td>Evita duplicidade</td></tr><tr><td>Cancelamento</td><td>Enviar aviso</td><td>sent / pending / failed</td><td>Registra histórico</td></tr><tr><td>Lembretes</td><td>24h / 3h</td><td>Preparado</td><td>Controle de envio único</td></tr></tbody></table></div></div></section>
+<section class="section"><div class="container"><div class="teaser"><div class="eyebrow">Segurança das credenciais</div><h2>Tokens e segredos ficam no backend.</h2><p class="lead">As integrações devem usar variáveis de ambiente e conexões HTTPS, sem expor Client Secret ou Refresh Token no frontend.</p><a class="btn btn-primary" href="seguranca.html">Ver segurança</a></div></div></section>
+</main>
+<div data-site-footer=""></div>
+<script src="assets/config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

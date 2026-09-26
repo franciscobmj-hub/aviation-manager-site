@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#0B1E3A" name="theme-color"/>
+<meta content="Learn about Aviation Manager security practices, OAuth, HTTPS and credential protection." name="description"/>
+<title>Security | Aviation Manager</title>
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/styles.css" rel="stylesheet"/>
+<link href="https://aviationmanager.app/seguranca.html" hreflang="pt-BR" rel="alternate"/><link href="https://aviationmanager.app/en/seguranca.html" hreflang="en" rel="alternate"/><link href="https://aviationmanager.app/seguranca.html" hreflang="x-default" rel="alternate"/></head>
+<body data-page="features">
+<div data-site-header=""></div>
+<main>
+<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="index.html">Home</a> / Security</div><div class="eyebrow">Security</div><h1>Your data. Your operation. More control.</h1><p class="lead">Authentication, HTTPS and credential-protection best practices are part of the platform deployment structure.</p></div></section>
+<section class="section"><div class="container"><div class="grid-3"><article class="card"><div class="icon">🔒</div><h3>HTTPS</h3><p>The production environment should operate entirely over encrypted connections.</p></article><article class="card"><div class="icon">◈</div><h3>Backend credentials</h3><p>Tokens, Client Secrets and API keys should never be exposed to the browser.</p></article><article class="card"><div class="icon">◎</div><h3>Access control</h3><p>Authentication and permissions should limit information access according to the user's profile.</p></article></div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><div><div class="eyebrow">OAuth</div><h2>Google Calendar and Gmail with controlled permissions.</h2></div><p>Use only the scopes required by the system and keep refresh tokens protected.</p></div><div class="feature-list"><div class="feature-line"><small>Calendar</small><h3>calendar.events</h3><p>Specific permission to create and update events.</p></div><div class="feature-line"><small>Gmail</small><h3>gmail.send</h3><p>Permission intended for sending without requiring broad inbox access.</p></div><div class="feature-line"><small>Identity</small><h3>userinfo.email</h3><p>Used to confirm the account associated with the integration.</p></div><div class="feature-line"><small>Secret</small><h3>Refresh Token</h3><p>It must be stored securely and never appear in public code.</p></div></div></div></section>
+</main>
+<div data-site-footer=""></div>
+<script src="../assets/config.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "aviation-manager-site",
+  "private": true,
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  }
+}
