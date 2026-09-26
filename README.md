@@ -8,3 +8,5 @@ Site institucional bilíngue do Aviation Manager.
 - Deploy: `npx wrangler deploy`
 
 A pasta `public/` contém os arquivos estáticos do site.
+
+Deploy automático via Cloudflare.
