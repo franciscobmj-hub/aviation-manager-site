@@ -10,7 +10,7 @@
     home:'Home', features:'Features', schedule:'Scheduling', reviews:'Inspections',
     integrations:'Integrations', contact:'Contact', access:'Log in',
     discover:'Discover Aviation Manager', mainNav:'Main navigation',
-    menu:'Open menu', homeAria:'Aviation Manager - home',
+    menu:'Open menu', closeMenu:'Close menu', homeAria:'Aviation Manager - home',
     product:'Product', operation:'Operations', institutional:'Company',
     costs:'Costs and reports', maintenance:'Maintenance',
     aircraft:'Aircraft management', app:'Access application',
@@ -21,7 +21,7 @@
     home:'Início', features:'Funcionalidades', schedule:'Agendamento', reviews:'Revisões',
     integrations:'Integrações', contact:'Contato', access:'Entrar',
     discover:'Conhecer o Aviation Manager', mainNav:'Navegação principal',
-    menu:'Abrir menu', homeAria:'Aviation Manager - início',
+    menu:'Abrir menu', closeMenu:'Fechar menu', homeAria:'Aviation Manager - início',
     product:'Produto', operation:'Operação', institutional:'Institucional',
     costs:'Custos e relatórios', maintenance:'Manutenção',
     aircraft:'Administração de aeronaves', app:'Acessar aplicativo',
@@ -49,18 +49,32 @@
         <img src="${prefix}assets/logo-blue.webp" alt="Aviation Manager">
         <span class="brand-copy"><strong>AVIATION MANAGER</strong><span>MORE THAN A SCHEDULE.</span></span>
       </a>
-      <nav class="nav" aria-label="${copy.mainNav}">${nav.map(([href,label,key])=>`<a href="${href}" class="${page===key?'active':''}">${label}</a>`).join('')}</nav>
+      <div class="site-menu" id="site-menu"><nav class="nav" aria-label="${copy.mainNav}">${nav.map(([href,label,key])=>`<a href="${href}" class="${page===key?'active':''}">${label}</a>`).join('')}</nav>
+      <div class="header-actions"><a class="btn btn-ghost" href="acesso.html">${copy.access}</a><a class="btn btn-primary" href="contato.html">${copy.discover}</a></div></div>
       <div class="lang-switch" aria-label="Language">
         <a href="${ptHref}" class="${!isEn?'active':''}" lang="pt-BR" hreflang="pt-BR">PT</a>
         <span aria-hidden="true">|</span>
         <a href="${enHref}" class="${isEn?'active':''}" lang="en" hreflang="en">EN</a>
       </div>
-      <div class="header-actions"><a class="btn btn-ghost" href="acesso.html">${copy.access}</a><a class="btn btn-primary" href="contato.html">${copy.discover}</a></div>
-      <button class="menu-toggle" aria-label="${copy.menu}" aria-expanded="false">☰</button>
+      <button class="menu-toggle" aria-label="${copy.menu}" aria-expanded="false" aria-controls="site-menu" type="button">☰</button>
     </div></header>`;
     const h = header.querySelector('.site-header');
     const t = header.querySelector('.menu-toggle');
-    t?.addEventListener('click',()=>{h.classList.toggle('open');t.setAttribute('aria-expanded',h.classList.contains('open')?'true':'false')});
+    const setMenuOpen = (open) => {
+      h.classList.toggle('open', open);
+      t.setAttribute('aria-expanded', String(open));
+      t.setAttribute('aria-label', open ? copy.closeMenu : copy.menu);
+    };
+    t.addEventListener('click', () => setMenuOpen(!h.classList.contains('open')));
+    header.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && h.classList.contains('open')) {
+        setMenuOpen(false);
+        t.focus();
+      }
+    });
+    header.querySelectorAll('.site-menu a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+    window.matchMedia('(max-width: 1280px)').addEventListener('change', () => setMenuOpen(false));
+    window.addEventListener('pageshow', () => setMenuOpen(false));
   }
 
   if (footer) {
@@ -106,3 +120,4 @@
   }));
   function showToast(msg){let t=document.querySelector('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4200)}
 })();
+
